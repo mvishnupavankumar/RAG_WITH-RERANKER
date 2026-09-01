@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JERRY.AI</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <div id="notebooksPage" class="page">
+    <header class="home-header">
+      <div class="brand">
+        <div class="logo">N</div>
+        <span>JERRY.AI</span>
+      </div>
+      <button id="profileHome" class="profile" type="button">V</button>
+    </header>
+
+    <main class="home-content">
+      <div class="home-title">
+        <div>
+          <h1>Your notebooks</h1>
+          <p>Choose a jerry to continue exploring your sources.</p>
+        </div>
+        <button id="newNotebookButton" class="new-btn" type="button">＋ New jerry</button>
+      </div>
+      <div id="notebookGrid" class="notebook-grid"></div>
+    </main>
+  </div>
+
+  <div id="notebookPage" class="page hidden">
+    <header class="notebook-header">
+      <button id="backButton" class="back-btn" type="button">←</button>
+
+      <div class="current-notebook">
+        <div id="currentIcon" class="notebook-icon">✦</div>
+        <div>
+          <strong id="currentTitle">AI Engineering</strong>
+          <small id="currentCount">0 sources</small>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" disabled>↗ Share</button>
+        <button id="profileNotebook" class="profile" type="button">V</button>
+      </div>
+    </header>
+
+    <main class="notebook-workspace">
+      <section class="sources">
+        <div class="sources-header">
+          <div class="sources-title-row">
+            <div>
+              <h2>Sources</h2>
+              <p id="sourceDescription">Documents in this jerry</p>
+            </div>
+            <button id="collapseSourcesButton" class="sources-collapse-btn" type="button" aria-label="Collapse sources" title="Collapse sources">←</button>
+          </div>
+
+          <label class="source-search" for="sourceSearchInput">
+            <span class="search-icon">⌕</span>
+            <input id="sourceSearchInput" type="text" placeholder="Search sources">
+          </label>
+
+          <div class="sources-toolbar">
+            <label class="select-all-control">
+              <input id="selectAllSourcesCheckbox" type="checkbox">
+              <span>Select all</span>
+            </label>
+            <button id="removeSelectedButton" class="remove-selected-btn" type="button" disabled>🗑 Remove</button>
+          </div>
+        </div>
+
+        <button id="addSourceButton" class="add-source" type="button">
+          <div class="plus-circle">＋</div>
+          <div>
+            <strong>Add source</strong>
+            <span>PDF, DOCX, TXT and more</span>
+          </div>
+        </button>
+        <input id="sourceFileInput" type="file" accept=".pdf,.docx,.txt,.md" hidden>
+
+        <div id="sourceList" class="source-list"></div>
+        <div id="sourceEmptyState" class="source-empty hidden">No sources found</div>
+      </section>
+
+      <section class="chat">
+        <button id="openSourcesButton" class="open-sources-btn hidden" type="button">Sources</button>
+
+        <div class="chat-inner">
+          <div id="welcome" class="welcome">
+            <div class="sparkle">✦</div>
+            <h1>What do you want to explore?</h1>
+            <p>Ask questions about the sources in this jerry.</p>
+
+            <div class="suggestions">
+              <button type="button" data-question="Summarize my sources">✦ Summarize my sources</button>
+              <button type="button" data-question="What are the key concepts?">⌕ Find key concepts</button>
+              <button type="button" data-question="Create a study guide">☷ Create a study guide</button>
+            </div>
+          </div>
+
+          <div id="messages"></div>
+        </div>
+
+        <div class="composer-wrap">
+          <div class="composer">
+            <button id="attachButton" class="attach" type="button" title="Add source">＋</button>
+            <input id="questionInput" type="text" placeholder="Ask anything about your sources..." autocomplete="off">
+            <button id="sendButton" class="send" type="button">↑</button>
+          </div>
+          <p>AI-generated answers may contain mistakes. Check important information.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/assets/script.js" defer></script>
+</body>
+</html>
